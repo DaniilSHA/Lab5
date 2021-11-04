@@ -1,9 +1,6 @@
 public class CalculateIntegralOneDimensional implements Calculate {
 
-
-
     @Override
-    public double calculate() {
-        return 0;
+    public void calculate() {
     }
 }

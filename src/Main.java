@@ -1,23 +1,55 @@
 public class Main {
     public static void main(String[] args) {
-        FindRoots findRoot = new FindRoots();
-
-        System.out.println(findRoot.functionExp(0.69));
-        System.out.println(findRoot.functionSin(2.29));
-        System.out.println(findRoot.functionLn(1.94));
-        System.out.println(findRoot.functionTg(3.14));
-        System.out.println(findRoot.functionCube(2.69));
-
-
-
-        System.out.println(findRoot.findRoots("Exp", 0.01, 2, 0.00001));
-        System.out.println(findRoot.findRoots("Sin", 2, 3, 0.00001));
-        System.out.println(findRoot.findRoots("Ln", 1, 3, 0.00001));
-        System.out.println(findRoot.findRoots("Tg", 2, 4, 0.00001));
-        System.out.println(findRoot.findRoots("Cube", 1, 5, 0.00001));
-
-
-
+        Main main = new Main();
+        main.innerCall();
+        main.anonimusCall();
+        Calculate.staticCalculate();
+        main.instanceCall();
+        main.lamdaCall();
 
     }
+
+    private void lamdaCall(){
+        Calculate calculate = () -> {
+            System.out.println("Лямда метод: ");
+            FindRoots findRoot = new FindRoots();
+            findRoot.calculate();
+        };
+        calculate.calculate();
+    }
+
+    private void instanceCall(){
+        System.out.println("Метод экземпляра: ");
+        FindRoots findRoot = new FindRoots();
+        findRoot.calculate();
+    }
+
+    private void anonimusCall() {
+        Calculate calculate = new Calculate() {
+            @Override
+            public void calculate() {
+                System.out.println("Анонимный класс: ");
+                FindRoots findRoot = new FindRoots();
+                findRoot.calculate();
+            }
+        };
+        calculate.calculate();
+    }
+
+    private void innerCall() {
+        Inner inner = new Inner();
+        inner.calculate();
+    }
+
+    private class Inner implements Calculate {
+        @Override
+        public void calculate() {
+            System.out.println("Вложенный класс: ");
+            FindRoots findRoot = new FindRoots();
+            findRoot.calculate();
+        }
+    }
+
+
 }
+

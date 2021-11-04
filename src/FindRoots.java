@@ -104,7 +104,11 @@ public class FindRoots implements Calculate{
 
 
     @Override
-    public double calculate() {
-        return 0;
+    public void calculate() {
+        System.out.println("Exp: "+ Calculate.roundUp(this.findRoots("Exp", 0.01, 2, 0.00001)));
+        System.out.println("Sin: "+ Calculate.roundUp(this.findRoots("Sin", 2, 3, 0.00001)));
+        System.out.println("Ln: "+ Calculate.roundUp(this.findRoots("Ln", 1, 3, 0.00001)));
+        System.out.println("Tg: "+ Calculate.roundUp(this.findRoots("Tg", 2, 4, 0.00001)));
+        System.out.println("Cube: "+ Calculate.roundUp(this.findRoots("Cube", 1, 5, 0.00001)));
     }
 }
