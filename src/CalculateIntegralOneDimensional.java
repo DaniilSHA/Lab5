@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class CalculateIntegralOneDimensional implements Calculate {
 
     public double findIntegral (String function, double leftRange, double rightRange, double accuracy) {
