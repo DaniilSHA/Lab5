@@ -12,16 +12,24 @@ public class Main {
     private void lamdaCall(){
         Calculate calculate = () -> {
             System.out.println("Лямда метод: ");
+            System.out.println("1 part of lab");
             FindRoots findRoot = new FindRoots();
             findRoot.calculate();
+            System.out.println("2 part of lab");
+            CalculateIntegralOneDimensional calculateIntegralOneDimensional = new CalculateIntegralOneDimensional();
+            calculateIntegralOneDimensional.calculate();
         };
         calculate.calculate();
     }
 
     private void instanceCall(){
         System.out.println("Метод экземпляра: ");
+        System.out.println("1 part of lab");
         FindRoots findRoot = new FindRoots();
         findRoot.calculate();
+        System.out.println("2 part of lab");
+        CalculateIntegralOneDimensional calculateIntegralOneDimensional = new CalculateIntegralOneDimensional();
+        calculateIntegralOneDimensional.calculate();
     }
 
     private void anonimusCall() {
@@ -29,8 +37,12 @@ public class Main {
             @Override
             public void calculate() {
                 System.out.println("Анонимный класс: ");
+                System.out.println("1 part of lab");
                 FindRoots findRoot = new FindRoots();
                 findRoot.calculate();
+                System.out.println("2 part of lab");
+                CalculateIntegralOneDimensional calculateIntegralOneDimensional = new CalculateIntegralOneDimensional();
+                calculateIntegralOneDimensional.calculate();
             }
         };
         calculate.calculate();
@@ -45,8 +57,12 @@ public class Main {
         @Override
         public void calculate() {
             System.out.println("Вложенный класс: ");
+            System.out.println("1 part of lab");
             FindRoots findRoot = new FindRoots();
             findRoot.calculate();
+            System.out.println("2 part of lab");
+            CalculateIntegralOneDimensional calculateIntegralOneDimensional = new CalculateIntegralOneDimensional();
+            calculateIntegralOneDimensional.calculate();
         }
     }
 
